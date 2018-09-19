@@ -2,6 +2,12 @@ const scrollBehavior = require('./scrollBehavior')
 const StylelintPlugin = require('stylelint-webpack-plugin')
 
 module.exports = {
+  axios: {
+    host: 'api.github.com',
+    https: true,
+    port: 443
+  },
+
   build: {
     // Generate webpack-bundle-analyzer report
     analyze: {
@@ -33,9 +39,11 @@ module.exports = {
       })
     ]
   },
+
   css: [
     'normalize.css'
   ],
+
   head: {
     link: [
       { rel: 'icon', href: '/favicon.ico' }
@@ -47,6 +55,11 @@ module.exports = {
     ],
     title: 'Nuxt Research'
   },
+
+  modules: [
+    '@nuxtjs/axios'
+  ],
+
   router: {
     linkActiveClass: 'is-active',
     linkExactActiveClass: 'is-exact-active',
