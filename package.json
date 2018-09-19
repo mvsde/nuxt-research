@@ -1,0 +1,42 @@
+{
+  "name": "nuxt-research",
+  "version": "0.1.0",
+  "description": "A research project for server side rendering with Nuxt.js",
+  "scripts": {
+    "lint:script": "eslint --fix --ext .js,.vue .",
+    "lint:style": "stylelint --fix --custom-formatter node_modules/stylelint-codeframe-formatter \"**/*.{css,vue}\"",
+    "dev": "NODE_ENV=development nuxt",
+    "build": "NODE_ENV=production nuxt build",
+    "generate": "NODE_ENV=production nuxt generate",
+    "start": "NODE_ENV=production nuxt start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@git.work.de:fynn/nuxt-research.git"
+  },
+  "author": {
+    "name": "Fynn Becker",
+    "email": "fynn.becker@solutions.work"
+  },
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "normalize.css": "^8.0.0",
+    "nuxt": "^1.4.2"
+  },
+  "devDependencies": {
+    "babel-eslint": "^9.0.0",
+    "eslint": "^5.6.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-loader": "^2.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-node": "^7.0.1",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "eslint-plugin-vue": "^5.0.0-beta.3",
+    "stylelint": "^9.5.0",
+    "stylelint-codeframe-formatter": "^1.0.4",
+    "stylelint-config-standard": "^18.2.0",
+    "stylelint-webpack-plugin": "^0.10.5"
+  }
+}
