@@ -1,3 +1,5 @@
+import api from '@/api'
+
 export const state = () => ({
   list: {}
 })
@@ -10,7 +12,7 @@ export const mutations = {
 
 export const actions = {
   async get ({ commit }) {
-    await this.$axios.get('/orgs/nuxt/repos')
+    await api.get('/orgs/nuxt/repos')
       .then(response => {
         commit('set', response.data)
       })

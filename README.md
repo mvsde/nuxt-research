@@ -18,11 +18,14 @@ npm run dev
 # Build production files
 npm run build
 
-# Start production server
-npm run start
+# Build production files for static file server
+npm run build:static
 
-# Generate production files for static file server
-npm run generate
+# Start production server
+npm run serve
+
+# Start simple server for static files
+npm run serve:static
 ```
 
 ## Linting

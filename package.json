@@ -7,8 +7,9 @@
     "lint:style": "stylelint --fix --custom-formatter node_modules/stylelint-codeframe-formatter \"**/*.{css,vue}\"",
     "dev": "NODE_ENV=development nuxt",
     "build": "NODE_ENV=production nuxt build",
-    "generate": "NODE_ENV=production nuxt generate",
-    "start": "NODE_ENV=production nuxt start"
+    "build:static": "NODE_ENV=production nuxt generate",
+    "serve": "NODE_ENV=production nuxt start",
+    "serve:static": "http-server dist -d false"
   },
   "repository": {
     "type": "git",
@@ -21,7 +22,8 @@
   "license": "UNLICENSED",
   "private": true,
   "dependencies": {
-    "@nuxtjs/axios": "^5.3.1",
+    "axios": "^0.18.0",
+    "http-server": "^0.11.1",
     "normalize.css": "^8.0.0",
     "nuxt": "^1.4.2"
   },
