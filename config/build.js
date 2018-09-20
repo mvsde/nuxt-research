@@ -29,5 +29,8 @@ module.exports = {
       files: '**/*.{css,vue}',
       formatter: require('stylelint-codeframe-formatter')
     })
+  ],
+  vendor: [
+    'axios'
   ]
 }
