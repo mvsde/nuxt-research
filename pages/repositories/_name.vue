@@ -1,31 +1,30 @@
 <template>
-  <main>
+  <v-main>
 
-    <nuxt-link :to="{ name: 'repositories' }">← Back to all repositories</nuxt-link>
+    <nuxt-link to="/repositories">← Repository list</nuxt-link>
 
-    <h1>{{ repository.name }}</h1>
-    <p>{{ repository.description }}</p>
+    <v-repository
+      :name="repository.name"
+      :url="repository.html_url"
+      :description="repository.description"
+      :stars="repository.stargazers_count"
+      :issues="repository.open_issues"
+      :forks="repository.forks"
+    />
 
-    <h2>URL</h2>
-    <p><a
-      :href="repository.html_url"
-      target="_blank"
-    >{{ repository.html_url }}</a></p>
-
-    <h2>Stars</h2>
-    <p>{{ repository.stargazers_count }}</p>
-
-    <h2>Issues</h2>
-    <p>{{ repository.open_issues }}</p>
-
-    <h2>Forks</h2>
-    <p>{{ repository.forks }}</p>
-
-  </main>
+  </v-main>
 </template>
 
 <script>
+import VMain from '@/components/VMain'
+import VRepository from '@/components/VRepository'
+
 export default {
+  components: {
+    VMain,
+    VRepository
+  },
+
   computed: {
     repository () {
       return this.$store.state.repositories.list.find(item => {

@@ -1,7 +1,7 @@
 import api from '@/api'
 
 export const state = () => ({
-  list: {}
+  list: []
 })
 
 export const mutations = {

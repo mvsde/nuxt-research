@@ -1,8 +1,26 @@
 <template>
-  <main>
+  <v-main>
 
     <h1>Nuxt Research</h1>
-    <nuxt-link :to="{ name: 'repositories' }">Repositories</nuxt-link>
 
-  </main>
+    <ul>
+      <li>
+        <nuxt-link to="/repositories">Repositories</nuxt-link>
+      </li>
+      <li>
+        <nuxt-link to="/members">Members</nuxt-link>
+      </li>
+    </ul>
+
+  </v-main>
 </template>
+
+<script>
+import VMain from '@/components/VMain'
+
+export default {
+  components: {
+    VMain
+  }
+}
+</script>

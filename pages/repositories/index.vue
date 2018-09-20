@@ -1,7 +1,7 @@
 <template>
-  <main>
+  <v-main>
 
-    <nuxt-link :to="{ name: 'index' }">← Back to home</nuxt-link>
+    <nuxt-link to="/">← Home</nuxt-link>
 
     <h1>Repositories</h1>
 
@@ -20,14 +20,21 @@
             }"
           >{{ repository.name }}</nuxt-link>
         </h2>
+        <p v-if="repository.description">{{ repository.description }}</p>
       </li>
     </ul>
 
-  </main>
+  </v-main>
 </template>
 
 <script>
+import VMain from '@/components/VMain'
+
 export default {
+  components: {
+    VMain
+  },
+
   computed: {
     repositories () {
       return this.$store.state.repositories.list
