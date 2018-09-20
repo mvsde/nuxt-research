@@ -43,6 +43,10 @@ export default {
     }
   },
 
+  validate ({ params }) {
+    return /^\d+$/.test(params.name)
+  },
+
   components: {
     VMain
   },
