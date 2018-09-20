@@ -3,7 +3,7 @@
 
     <nuxt-link to="/">← Home</nuxt-link>
 
-    <h1>Members</h1>
+    <h1>Members (Client)</h1>
 
     <v-member
       v-for="member in members"

@@ -8,7 +8,10 @@
         <nuxt-link to="/repositories">Repositories</nuxt-link>
       </li>
       <li>
-        <nuxt-link to="/members">Members</nuxt-link>
+        <nuxt-link to="/members-client">Members (Client)</nuxt-link>
+      </li>
+      <li>
+        <nuxt-link to="/members-server">Members (Server)</nuxt-link>
       </li>
     </ul>
 

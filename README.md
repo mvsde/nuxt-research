@@ -37,3 +37,15 @@ npm run lint:script
 # Lint CSS
 npm run lint:style
 ```
+
+## GitHub Token
+
+To raise the GitHub API rate limit, set a personal access token before running any of the tasks:
+
+```bash
+# Set GitHub username
+export GITHUB_LOGIN=username
+
+# Set GitHub personal access token
+export GITHUB_TOKEN=token
+```
