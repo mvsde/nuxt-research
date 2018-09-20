@@ -26,6 +26,10 @@ import VMember from '@/components/VMember'
 import api from '@/api'
 
 export default {
+  head: {
+    title: 'Members (Server)'
+  },
+
   components: {
     VMain,
     VMember

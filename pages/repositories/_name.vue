@@ -34,6 +34,15 @@
 import VMain from '@/components/VMain'
 
 export default {
+  head () {
+    return {
+      title: this.repository.name,
+      meta: [
+        { name: 'description', content: this.repository.description, hid: 'description' }
+      ]
+    }
+  },
+
   components: {
     VMain
   },

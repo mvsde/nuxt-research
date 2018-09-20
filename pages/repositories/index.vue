@@ -20,6 +20,10 @@ import VMain from '@/components/VMain'
 import VRepository from '@/components/VRepository'
 
 export default {
+  head: {
+    title: 'Repositories'
+  },
+
   components: {
     VMain,
     VRepository
