@@ -38,23 +38,18 @@ export default {
   },
 
   mounted () {
-    this.$nextTick()
-      .then(() => {
-        this.$nuxt.$loading.start()
-        return api.get('/orgs/nuxt/members')
-      })
+    api.get('/orgs/nuxt/members')
       .then(response => {
-        const something = []
+        const requests = []
 
         response.data.forEach(member => {
-          something.push(api.get(member.url))
+          requests.push(api.get(member.url))
         })
 
-        return Promise.all(something)
+        return Promise.all(requests)
       })
       .then(members => {
         this.members = members.map(member => member.data)
-        this.$nuxt.$loading.finish()
       })
       .catch(error => {
         console.log(error.response)

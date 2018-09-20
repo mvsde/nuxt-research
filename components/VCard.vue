@@ -11,6 +11,6 @@
 
   background: #fff;
   border-radius: 0.25em;
-  box-shadow: 0 0.25em 0.5em rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0.125em 0.5em rgba(0, 0, 0, 0.2);
 }
 </style>

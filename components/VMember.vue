@@ -1,5 +1,5 @@
 <template>
-  <v-card>
+  <v-card class="member">
 
     <h2 class="member__title">
       <a

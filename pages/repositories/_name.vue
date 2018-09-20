@@ -3,26 +3,39 @@
 
     <nuxt-link to="/repositories">← Repository list</nuxt-link>
 
-    <v-repository
-      :name="repository.name"
-      :url="repository.html_url"
-      :description="repository.description"
-      :stars="repository.stargazers_count"
-      :issues="repository.open_issues"
-      :forks="repository.forks"
-    />
+    <h1>
+      {{ repository.name }}
+      <a
+        :href="repository.html_url"
+        target="_blank"
+      >↗</a>
+    </h1>
+    <p v-if="repository.description">{{ repository.description }}</p>
+
+    <div v-if="repository.stargazers_count">
+      <h2>Stars</h2>
+      <p>{{ repository.stargazers_count }}</p>
+    </div>
+
+    <div v-if="repository.open_issues">
+      <h2>Issues</h2>
+      <p>{{ repository.open_issues }}</p>
+    </div>
+
+    <div v-if="repository.forks">
+      <h2>Forks</h2>
+      <p>{{ repository.forks }}</p>
+    </div>
 
   </v-main>
 </template>
 
 <script>
 import VMain from '@/components/VMain'
-import VRepository from '@/components/VRepository'
 
 export default {
   components: {
-    VMain,
-    VRepository
+    VMain
   },
 
   computed: {

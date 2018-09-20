@@ -1,29 +1,16 @@
 <template>
-  <v-card>
+  <v-card class="repository">
 
-    <h1>
-      {{ name }}
-      <a
-        :href="url"
-        target="_blank"
-      >↗</a>
-    </h1>
+    <h2>
+      <nuxt-link
+        :to="{
+          name: 'repositories-name',
+          params: { name }
+        }"
+      >{{ name }}</nuxt-link>
+    </h2>
+
     <p v-if="description">{{ description }}</p>
-
-    <div v-if="stars">
-      <h2>Stars</h2>
-      <p>{{ stars }}</p>
-    </div>
-
-    <div v-if="issues">
-      <h2>Issues</h2>
-      <p>{{ issues }}</p>
-    </div>
-
-    <div v-if="forks">
-      <h2>Forks</h2>
-      <p>{{ forks }}</p>
-    </div>
 
   </v-card>
 </template>
@@ -41,26 +28,20 @@ export default {
       type: String,
       required: true
     },
-    url: {
-      type: String,
-      required: true
-    },
     description: {
       type: String,
       default: ''
-    },
-    stars: {
-      type: Number,
-      default: 0
-    },
-    issues: {
-      type: Number,
-      default: 0
-    },
-    forks: {
-      type: Number,
-      default: 0
     }
   }
 }
 </script>
+
+<style scoped>
+.repository > :first-child {
+  margin-top: 0;
+}
+
+.repository > :last-child {
+  margin-bottom: 0;
+}
+</style>

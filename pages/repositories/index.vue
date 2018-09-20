@@ -5,34 +5,24 @@
 
     <h1>Repositories</h1>
 
-    <ul>
-      <li
-        v-for="repository in repositories"
-        :key="repository.id"
-      >
-        <h2>
-          <nuxt-link
-            :to="{
-              name: 'repositories-name',
-              params: {
-                name: repository.name
-              }
-            }"
-          >{{ repository.name }}</nuxt-link>
-        </h2>
-        <p v-if="repository.description">{{ repository.description }}</p>
-      </li>
-    </ul>
+    <v-repository
+      v-for="repository in repositories"
+      :key="repository.id"
+      :description="repository.description"
+      :name="repository.name"
+    />
 
   </v-main>
 </template>
 
 <script>
 import VMain from '@/components/VMain'
+import VRepository from '@/components/VRepository'
 
 export default {
   components: {
-    VMain
+    VMain,
+    VRepository
   },
 
   computed: {
