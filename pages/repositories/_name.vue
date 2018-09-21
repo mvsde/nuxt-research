@@ -44,7 +44,11 @@ export default {
   },
 
   validate ({ params }) {
-    return /^\d+$/.test(params.name)
+    if (typeof params.name === 'string') {
+      return true
+    }
+
+    return false
   },
 
   components: {

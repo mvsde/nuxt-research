@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   linkActiveClass: 'is-active',
   linkExactActiveClass: 'is-exact-active',
   scrollBehavior: function (to, from, savedPosition) {

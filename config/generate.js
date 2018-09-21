@@ -1,6 +1,7 @@
-const api = require('../api')
+import api from '../api'
 
-module.exports = {
+export default {
+  interval: 100,
   async routes () {
     // Add repositories to static generation of dynamic routes
     const repositories = await api.get('/orgs/nuxt/repos')

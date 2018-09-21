@@ -1,4 +1,4 @@
-const axios = require('axios')
+import axios from 'axios'
 const instance = axios.create()
 
 instance.defaults.baseURL = 'https://api.github.com'
@@ -7,11 +7,11 @@ instance.defaults.baseURL = 'https://api.github.com'
 instance.defaults.headers.common['Accept'] = 'application/vnd.github.v3+json'
 
 // Extract GitHub personal access token from env variables
-if (process.server && process.env.GITHUB_USER && process.env.GITHUB_TOKEN) {
+if (process.env.GITHUB_USER && process.env.GITHUB_TOKEN) {
   instance.defaults.auth = {
     username: process.env.GITHUB_USER,
     password: process.env.GITHUB_TOKEN
   }
 }
 
-module.exports = instance
+export default instance

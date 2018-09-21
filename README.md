@@ -44,7 +44,7 @@ To raise the GitHub API rate limit, set a personal access token before running a
 
 ```bash
 # Set GitHub username
-export GITHUB_LOGIN=username
+export GITHUB_USER=username
 
 # Set GitHub personal access token
 export GITHUB_TOKEN=token

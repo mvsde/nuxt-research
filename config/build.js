@@ -1,11 +1,11 @@
-const StylelintPlugin = require('stylelint-webpack-plugin')
+import stylelintCodeframeFormatter from 'stylelint-codeframe-formatter'
+import StylelintPlugin from 'stylelint-webpack-plugin'
 
-module.exports = {
+export default {
   // Generate webpack-bundle-analyzer report
   analyze: {
     analyzerMode: 'static',
-    openAnalyzer: false,
-    reportFilename: '../report.html'
+    openAnalyzer: false
   },
   extend (config, ctx) {
     // Run ESLint on save
@@ -27,10 +27,7 @@ module.exports = {
     new StylelintPlugin({
       emitErrors: process.env.NODE_ENV === 'production',
       files: '**/*.{css,vue}',
-      formatter: require('stylelint-codeframe-formatter')
+      formatter: stylelintCodeframeFormatter
     })
-  ],
-  vendor: [
-    'axios'
   ]
 }

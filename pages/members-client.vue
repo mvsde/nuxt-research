@@ -42,7 +42,11 @@ export default {
   },
 
   mounted () {
-    api.get('/orgs/nuxt/members')
+    this.$nextTick()
+      .then(() => {
+        this.$nuxt.$loading.start()
+        return api.get('/orgs/nuxt/members')
+      })
       .then(response => {
         const requests = []
 
@@ -54,9 +58,11 @@ export default {
       })
       .then(members => {
         this.members = members.map(member => member.data)
+        this.$nuxt.$loading.finish()
       })
       .catch(error => {
         console.log(error.response)
+        this.$nuxt.$loading.set(100).fail()
       })
   }
 }

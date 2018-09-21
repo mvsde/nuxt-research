@@ -1,11 +1,11 @@
-const build = require('./config/build')
-const css = require('./config/css')
-const generate = require('./config/generate')
-const head = require('./config/head')
-const loading = require('./config/loading')
-const router = require('./config/router')
+import build from './config/build'
+import css from './config/css'
+import generate from './config/generate'
+import head from './config/head'
+import loading from './config/loading'
+import router from './config/router'
 
-module.exports = {
+export default {
   build,
   css,
   generate,
